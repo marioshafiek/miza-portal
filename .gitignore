@@ -1,0 +1,30 @@
+.DS_Store
+.thumbs.db
+node_modules
+
+# Quasar core related directories
+.quasar
+/dist
+
+# local .env files
+.env
+.env.local*
+
+# Cordova related directories and files
+/src-cordova/node_modules
+/src-cordova/platforms
+
+# Capacitor related directories and files
+/src-capacitor/www
+/src-capacitor/android/app/src/main/assets/public
+
+# BEX related directories and files
+/src-bex/www
+/src-bex/icons/*.png
+
+# SSR directory
+/src-ssr/node_modules
+
+# Logs
+npm-debug.log
+yarn-error.log
