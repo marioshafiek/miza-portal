@@ -6,6 +6,7 @@ import {
   createWebHashHistory,
 } from 'vue-router'
 import routes from './routes'
+import { useAuthStore } from 'src/stores/auth'
 
 export default route(function (/* { store, ssrContext } */) {
   const createHistory = process.env.SERVER
@@ -18,6 +19,15 @@ export default route(function (/* { store, ssrContext } */) {
     scrollBehavior: () => ({ left: 0, top: 0 }),
     routes,
     history: createHistory(process.env.VUE_ROUTER_BASE),
+  })
+
+  Router.beforeEach((to) => {
+    const auth = useAuthStore()
+    const isAuth = auth.isAuthenticated
+    const isAuthRoute = to.path.startsWith('/auth')
+
+    if (!isAuth && !isAuthRoute) return '/auth/login'
+    if (isAuth && isAuthRoute) return '/'
   })
 
   return Router
