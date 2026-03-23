@@ -75,11 +75,6 @@
         class="mz-auth-submit"
       />
 
-      <p class="tw-text-center tw-text-[13px] tw-text-gray-400">
-        Don't have an account?
-        <router-link to="/auth/signup" class="tw-text-indigo-500 tw-font-semibold tw-no-underline hover:tw-underline">Sign up</router-link>
-      </p>
-
     </form>
   </div>
 </template>
