@@ -208,6 +208,7 @@
         </ResourceTable>
       </div>
     </div>
+    
 
     <!-- ── Product Dialog ──────────────────────────────────── -->
     <ResourceFormDialog
