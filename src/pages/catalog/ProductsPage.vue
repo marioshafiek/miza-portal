@@ -196,11 +196,6 @@
               </span>
             </template>
           </Column>
-          <Column field="barcode" header="Barcode" style="width:130px">
-            <template #body="{ data }">
-              <span class="tw-text-[12px] tw-text-gray-400 tw-font-mono">{{ data.barcode || '—' }}</span>
-            </template>
-          </Column>
           <Column field="is_active" header="Status" sortable style="width:100px">
             <template #body="{ data }">
               <span class="tw-inline-flex tw-items-center tw-gap-[5px] tw-py-[3px] tw-px-[9px] tw-rounded-[20px] tw-text-[11.5px] tw-font-semibold"
@@ -530,7 +525,7 @@ const savingVariant  = ref(false)
 const variantError   = ref('')
 const variantForm    = ref({
   product_id: null, sku: '', size: '', color: '',
-  price_modifier: 0, weight_grams: null, barcode: '', is_active: true,
+  price_modifier: 0, weight_grams: null, is_active: true,
 })
 
 function openVariantCreate() {
@@ -538,7 +533,7 @@ function openVariantCreate() {
   variantForm.value = {
     product_id: filterVariantProductId.value ?? null,
     sku: '', size: '', color: '',
-    price_modifier: 0, weight_grams: null, barcode: '', is_active: true,
+    price_modifier: 0, weight_grams: null, is_active: true,
   }
   variantError.value = ''
   variantDialog.value = true
@@ -552,7 +547,7 @@ function openVariantEdit(row) {
     color: row.color ?? '',
     price_modifier: row.price_modifier ?? 0,
     weight_grams: row.weight_grams ?? null,
-    barcode: row.barcode ?? '',
+    // barcode: row.barcode ?? null,
     is_active: row.is_active,
   }
   variantError.value = ''
@@ -562,11 +557,12 @@ async function saveVariant(form) {
   savingVariant.value = true
   variantError.value = ''
   try {
+    const payload = { ...form }
     if (editingVariant.value) {
-      const { error } = await supabase.from('product_variants').update(form).eq('id', editingVariant.value.id)
+      const { error } = await supabase.from('product_variants').update(payload).eq('id', editingVariant.value.id)
       if (error) throw error
     } else {
-      const { error } = await supabase.from('product_variants').insert(form)
+      const { error } = await supabase.from('product_variants').insert(payload)
       if (error) throw error
     }
     variantDialog.value = false
