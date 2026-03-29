@@ -447,6 +447,7 @@ async function fetchClientStages() {
   const { data, error } = await supabase.from('client_stages').select('id, client_id, name').order('sort_order')
   if (error) console.error('fetchClientStages error:', error)
   else clientStages.value = data ?? []
+
 }
 
 onMounted(() => {
