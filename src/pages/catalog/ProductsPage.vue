@@ -444,8 +444,9 @@ async function fetchClients() {
   if (!error) clients.value = data ?? []
 }
 async function fetchClientStages() {
-  const { data, error } = await supabase.from('client_stages').select('id, client_id, name').eq('is_active', true).order('sort_order')
-  if (!error) clientStages.value = data ?? []
+  const { data, error } = await supabase.from('client_stages').select('id, client_id, name').order('sort_order')
+  if (error) console.error('fetchClientStages error:', error)
+  else clientStages.value = data ?? []
 }
 
 onMounted(() => {
@@ -469,7 +470,8 @@ const productForm    = ref({
 const stageOptionsForClient = computed(() => {
   if (!productForm.value.client_id) return []
   return clientStages.value
-    .filter(s => s.client_id === productForm.value.client_id)
+    // eslint-disable-next-line eqeqeq
+    .filter(s => s.client_id == productForm.value.client_id)
     .map(s => ({ label: s.name, value: s.id }))
 })
 
