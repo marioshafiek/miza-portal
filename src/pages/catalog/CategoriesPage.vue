@@ -1,12 +1,12 @@
 <template>
-  <q-page class="tw-bg-[#f5f5f7]">
+  <q-page class="tw-bg-miza-paper">
     <div class="tw-max-w-[1200px] tw-mx-auto tw-px-7 tw-py-8 tw-flex tw-flex-col tw-gap-5">
 
       <!-- ── Page Header ──────────────────────────────────── -->
       <div class="tw-flex tw-items-end tw-justify-between">
         <div>
-          <div class="tw-text-[10.5px] tw-font-bold tw-uppercase tw-tracking-[1.5px] tw-text-indigo-500 tw-mb-1">Catalog</div>
-          <h1 class="tw-text-2xl tw-font-extrabold tw-text-[#0f0f11] tw-tracking-tight tw-leading-[1.1]">Categories</h1>
+          <div class="tw-text-[10.5px] tw-font-bold tw-uppercase tw-tracking-[1.5px] tw-text-miza-red tw-mb-1">Catalog</div>
+          <h1 class="tw-text-2xl tw-font-extrabold tw-text-miza-ink tw-tracking-tight tw-leading-[1.1]">Categories</h1>
           <p class="tw-text-[13.5px] tw-text-gray-400 tw-mt-1.5">Manage product categories and their display order.</p>
         </div>
       </div>

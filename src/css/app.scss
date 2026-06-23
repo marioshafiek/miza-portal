@@ -7,15 +7,41 @@
   @tailwind utilities;
 }
 
-// ─── Google Inter font ───────────────────────────────────────────────────────
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+// ─── Miza brand fonts — Baloo 2 (display) + Poppins (body) ──────────────────
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+
+// ─── Miza design tokens ─────────────────────────────────────────────────────
+:root {
+  --miza-red: #d6262c;
+  --miza-red-dark: #b71e23;
+  --miza-red-tint: #fbe9e9;
+  --miza-gold: #f5c518;
+  --miza-ink: #1f1d1a;
+  --miza-ink-60: #55524c;
+  --miza-ink-40: #8a8780;
+  --miza-paper: #fbfaf8;
+  --miza-white: #ffffff;
+  --miza-border: #eceae5;
+
+  --font-display: 'Baloo 2', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+}
 
 // ─── Base ────────────────────────────────────────────────────────────────────
 html, body, #q-app {
-  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif !important;
+  font-family: var(--font-body) !important;
   font-size: 14px;
-  background: #f5f5f7;
+  color: var(--miza-ink);
+  background: var(--miza-paper);
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Headings use the rounded display face
+h1, h2, h3, .mz-display {
+  font-family: var(--font-display) !important;
+  font-weight: 800;
+  line-height: 1.1;
 }
 
 // Strip Quasar's uppercase transform from all buttons globally

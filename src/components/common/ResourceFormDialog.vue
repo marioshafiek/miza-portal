@@ -131,12 +131,12 @@ function submit() { emit('submit', { ...form.value }) }
 
 // Save — filled, NO border
 .mz-btn-save.p-button {
-  background: #6366f1 !important;
+  background: #d6262c !important;
   border: none !important;
   border-radius: 8px !important;
   box-shadow: none !important;
   font-size: 13px !important; font-weight: 600 !important;
-  &:hover:not(:disabled) { background: #4f52e0 !important; }
+  &:hover:not(:disabled) { background: #b71e23 !important; }
   &:disabled { opacity: .6; }
 }
 
@@ -147,7 +147,7 @@ function submit() { emit('submit', { ...form.value }) }
   .p-inputtext {
     width: 100%;
     font-size: 13.5px !important;
-    font-family: 'Inter', sans-serif !important;
+    font-family: var(--font-body) !important;
     border-radius: 9px !important;
     border: 1.5px solid #e5e7eb !important;
     background: #f9fafb !important;
@@ -156,7 +156,7 @@ function submit() { emit('submit', { ...form.value }) }
     box-shadow: none !important;
     transition: border-color .15s, background .15s;
     &::placeholder { color: #c4c9d4 !important; }
-    &:focus { border-color: #6366f1 !important; background: #fff !important; box-shadow: none !important; }
+    &:focus { border-color: #d6262c !important; background: #fff !important; box-shadow: none !important; }
     &.p-invalid { border-color: #ef4444 !important; }
   }
 
@@ -164,7 +164,7 @@ function submit() { emit('submit', { ...form.value }) }
   .p-textarea {
     width: 100%;
     font-size: 13.5px !important;
-    font-family: 'Inter', sans-serif !important;
+    font-family: var(--font-body) !important;
     border-radius: 9px !important;
     border: 1.5px solid #e5e7eb !important;
     background: #f9fafb !important;
@@ -173,7 +173,7 @@ function submit() { emit('submit', { ...form.value }) }
     box-shadow: none !important;
     resize: none;
     min-height: 72px;
-    &:focus { border-color: #6366f1 !important; background: #fff !important; box-shadow: none !important; }
+    &:focus { border-color: #d6262c !important; background: #fff !important; box-shadow: none !important; }
   }
 
   // Select (Dropdown)
@@ -185,7 +185,7 @@ function submit() { emit('submit', { ...form.value }) }
     box-shadow: none !important;
     font-size: 13.5px !important;
     &:hover { border-color: #d1d5db !important; }
-    &.p-focus { border-color: #6366f1 !important; background: #fff !important; box-shadow: none !important; }
+    &.p-focus { border-color: #d6262c !important; background: #fff !important; box-shadow: none !important; }
     .p-select-label { font-size: 13.5px !important; color: #111 !important; padding: 10px 12px !important; }
   }
 
@@ -194,12 +194,12 @@ function submit() { emit('submit', { ...form.value }) }
     width: 100%;
     label { font-size: 13px !important; color: #9ca3af !important; }
     &:has(.p-inputtext:focus) label,
-    &:has(.p-inputtext:not(:placeholder-shown)) label { color: #6366f1 !important; font-size: 11px !important; }
+    &:has(.p-inputtext:not(:placeholder-shown)) label { color: #d6262c !important; font-size: 11px !important; }
   }
 
   // ToggleSwitch
   .p-toggleswitch.p-toggleswitch-checked .p-toggleswitch-slider {
-    background: #6366f1 !important;
+    background: #d6262c !important;
   }
 }
 

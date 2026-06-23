@@ -2,14 +2,10 @@
   <div class="tw-w-full tw-max-w-[400px] tw-bg-white tw-rounded-[20px] tw-border tw-border-gray-200 tw-shadow-[0_8px_40px_-8px_rgba(0,0,0,.1),0_0_0_1px_rgba(0,0,0,.03)] tw-overflow-hidden">
 
     <!-- Header -->
-    <div class="tw-flex tw-flex-col tw-items-center tw-text-center tw-px-8 tw-pt-9 tw-pb-7 tw-border-b tw-border-gray-100 tw-bg-[#fafafa]">
-      <div class="tw-w-10 tw-h-10 tw-rounded-[11px] tw-bg-gradient-to-br tw-from-indigo-500 tw-to-violet-500 tw-flex tw-items-center tw-justify-center tw-mb-3.5">
-        <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
-          <path d="M9 1L16.5 5.25V12.75L9 17L1.5 12.75V5.25L9 1Z" fill="white" fill-opacity=".9"/>
-        </svg>
-      </div>
-      <h2 class="tw-text-[18px] tw-font-extrabold tw-text-[#0f0f11] tw-tracking-tight tw-mb-1">Create an account</h2>
-      <p class="tw-text-[13px] tw-text-gray-400">Sign up for your Miza account.</p>
+    <div class="tw-flex tw-flex-col tw-items-center tw-text-center tw-px-8 tw-pt-9 tw-pb-7 tw-border-b tw-border-miza-border tw-bg-miza-paper">
+      <MizaLogo variant="icon" :size="44" class="tw-mb-4" />
+      <h2 class="tw-font-display tw-text-[22px] tw-font-extrabold tw-text-miza-ink tw-mb-1">Create an account</h2>
+      <p class="tw-text-[13px] tw-text-miza-ink-40">Sign up for your Miza account.</p>
     </div>
 
     <!-- Form -->
@@ -109,7 +105,7 @@
 
       <p class="tw-text-center tw-text-[13px] tw-text-gray-400">
         Already have an account?
-        <router-link to="/auth/login" class="tw-text-indigo-500 tw-font-semibold tw-no-underline hover:tw-underline">Sign in</router-link>
+        <router-link to="/auth/login" class="tw-text-miza-red tw-font-semibold tw-no-underline hover:tw-underline">Sign in</router-link>
       </p>
 
     </form>
@@ -124,6 +120,7 @@ import InputText from 'primevue/inputtext'
 import Select from 'primevue/select'
 import IconField from 'primevue/iconfield'
 import InputIcon from 'primevue/inputicon'
+import MizaLogo from 'components/brand/MizaLogo.vue'
 
 const authStore = useAuthStore()
 const showPassword = ref(false)
@@ -172,7 +169,7 @@ async function handleSignUp() {
   box-shadow: none !important;
   font-size: 13.5px !important;
   &:hover { border-color: #d1d5db !important; }
-  &.p-focus { border-color: #6366f1 !important; background: #fff !important; box-shadow: none !important; }
-  .p-select-label { font-size: 13.5px !important; color: #111 !important; padding: 10px 12px !important; }
+  &.p-focus { border-color: var(--miza-red) !important; background: #fff !important; box-shadow: 0 0 0 3px var(--miza-red-tint) !important; }
+  .p-select-label { font-size: 13.5px !important; color: var(--miza-ink) !important; padding: 10px 12px !important; }
 }
 </style>

@@ -2,14 +2,10 @@
   <div class="tw-w-full tw-max-w-[400px] tw-bg-white tw-rounded-[20px] tw-border tw-border-gray-200 tw-shadow-[0_8px_40px_-8px_rgba(0,0,0,.1),0_0_0_1px_rgba(0,0,0,.03)] tw-overflow-hidden">
 
     <!-- Header -->
-    <div class="tw-flex tw-flex-col tw-items-center tw-text-center tw-px-8 tw-pt-9 tw-pb-7 tw-border-b tw-border-gray-100 tw-bg-[#fafafa]">
-      <div class="tw-w-10 tw-h-10 tw-rounded-[11px] tw-bg-gradient-to-br tw-from-indigo-500 tw-to-violet-500 tw-flex tw-items-center tw-justify-center tw-mb-3.5">
-        <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
-          <path d="M9 1L16.5 5.25V12.75L9 17L1.5 12.75V5.25L9 1Z" fill="white" fill-opacity=".9"/>
-        </svg>
-      </div>
-      <h2 class="tw-text-[18px] tw-font-extrabold tw-text-[#0f0f11] tw-tracking-tight tw-mb-1">Welcome back</h2>
-      <p class="tw-text-[13px] tw-text-gray-400">Sign in to your Miza account.</p>
+    <div class="tw-flex tw-flex-col tw-items-center tw-text-center tw-px-8 tw-pt-9 tw-pb-7 tw-border-b tw-border-miza-border tw-bg-miza-paper">
+      <MizaLogo variant="icon" :size="44" class="tw-mb-4" />
+      <h2 class="tw-font-display tw-text-[22px] tw-font-extrabold tw-text-miza-ink tw-mb-1">Welcome back</h2>
+      <p class="tw-text-[13px] tw-text-miza-ink-40">Sign in to your Miza account.</p>
     </div>
 
     <!-- Form -->
@@ -56,7 +52,7 @@
           <Checkbox v-model="form.remember" binary input-id="remember" />
           <label for="remember" class="tw-text-[13px] tw-text-gray-700 tw-cursor-pointer">Remember me</label>
         </div>
-        <a href="#" class="tw-text-[13px] tw-text-indigo-500 tw-font-semibold tw-no-underline hover:tw-underline">Forgot password?</a>
+        <a href="#" class="tw-text-[13px] tw-text-miza-red tw-font-semibold tw-no-underline hover:tw-underline">Forgot password?</a>
       </div>
 
       <!-- Error -->
@@ -88,6 +84,7 @@ import InputText from 'primevue/inputtext'
 import IconField from 'primevue/iconfield'
 import InputIcon from 'primevue/inputicon'
 import Checkbox from 'primevue/checkbox'
+import MizaLogo from 'components/brand/MizaLogo.vue'
 
 const router = useRouter()
 const authStore = useAuthStore()
@@ -115,16 +112,16 @@ async function handleLogin() {
 .mz-input.p-inputtext {
   width: 100%;
   font-size: 13.5px !important;
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-body) !important;
   border-radius: 9px !important;
-  border: 1.5px solid #e5e7eb !important;
-  background: #f9fafb !important;
-  color: #111 !important;
+  border: 1.5px solid var(--miza-border) !important;
+  background: #fbfaf8 !important;
+  color: var(--miza-ink) !important;
   padding: 10px 12px 10px 36px !important;
   box-shadow: none !important;
-  transition: border-color .15s, background .15s;
+  transition: border-color .15s, background .15s, box-shadow .15s;
   &::placeholder { color: #c4c9d4 !important; }
-  &:focus { border-color: #6366f1 !important; background: #fff !important; box-shadow: none !important; }
+  &:focus { border-color: var(--miza-red) !important; background: #fff !important; box-shadow: 0 0 0 3px var(--miza-red-tint) !important; }
 }
 
 // Eye toggle icon
@@ -134,27 +131,29 @@ async function handleLogin() {
   &:hover { color: #374151 !important; }
 }
 
-// Checkbox — filled indigo
+// Checkbox — filled Miza red
 .p-checkbox .p-checkbox-box {
   border-radius: 5px !important;
-  border: 1.5px solid #e5e7eb !important;
+  border: 1.5px solid var(--miza-border) !important;
   &.p-highlight {
-    background: #6366f1 !important;
-    border-color: #6366f1 !important;
+    background: var(--miza-red) !important;
+    border-color: var(--miza-red) !important;
   }
 }
 
-// Submit button — filled indigo, no border
+// Submit button — filled Miza red, pill, no border
 .mz-auth-submit.p-button {
   width: 100%;
-  background: #6366f1 !important;
+  background: var(--miza-red) !important;
   border: none !important;
-  border-radius: 10px !important;
+  border-radius: 999px !important;
   box-shadow: none !important;
   font-size: 14px !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   padding: 12px !important;
-  &:hover:not(:disabled) { background: #4f52e0 !important; }
+  transition: background .18s ease, transform .12s ease;
+  &:hover:not(:disabled) { background: var(--miza-red-dark) !important; }
+  &:active:not(:disabled) { transform: translateY(1px); }
   &:disabled { opacity: .6; }
 }
 

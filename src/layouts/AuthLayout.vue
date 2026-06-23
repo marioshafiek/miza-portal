@@ -4,30 +4,30 @@
       <div class="tw-min-h-screen tw-flex">
 
         <!-- Left Panel — Branding -->
-        <div class="tw-hidden lg:tw-flex tw-flex-col tw-justify-between tw-w-1/2 tw-p-12 tw-bg-[#0f0f11] tw-shrink-0">
-          <div class="tw-flex tw-items-center tw-gap-2.5">
-            <div class="tw-w-9 tw-h-9 tw-rounded-[10px] tw-bg-gradient-to-br tw-from-indigo-500 tw-to-violet-500 tw-flex tw-items-center tw-justify-center tw-shrink-0">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M9 1L16.5 5.25V12.75L9 17L1.5 12.75V5.25L9 1Z" fill="white" fill-opacity=".9"/>
-              </svg>
-            </div>
-            <span class="tw-text-[17px] tw-font-bold tw-text-white tw-tracking-tight">Miza Portal</span>
+        <div class="tw-hidden lg:tw-flex tw-flex-col tw-justify-between tw-w-1/2 tw-p-12 tw-bg-miza-ink tw-shrink-0 tw-relative tw-overflow-hidden">
+          <!-- soft gold glow accent -->
+          <div class="tw-pointer-events-none tw-absolute tw--top-24 tw--right-24 tw-w-80 tw-h-80 tw-rounded-full tw-bg-miza-gold/10 tw-blur-3xl"></div>
+          <div class="tw-pointer-events-none tw-absolute tw--bottom-32 tw--left-20 tw-w-96 tw-h-96 tw-rounded-full tw-bg-miza-red/20 tw-blur-3xl"></div>
+
+          <div class="tw-flex tw-items-center tw-gap-3 tw-relative">
+            <MizaLogo variant="icon" :size="36" />
+            <MizaLogo tone="dark" :size="22" />
           </div>
 
-          <div class="tw-flex-1 tw-flex tw-flex-col tw-justify-center tw-py-16">
-            <h1 class="tw-text-[36px] tw-font-extrabold tw-text-white tw-leading-tight tw-tracking-tight tw-mb-4">
-              Miza Uniform<br />with confidence.<br /><span class="tw-text-lg tw-font-medium tw-text-white/70">Empowering your school’s success.</span>
+          <div class="tw-flex-1 tw-flex tw-flex-col tw-justify-center tw-py-16 tw-relative">
+            <h1 class="tw-font-display tw-text-[40px] tw-font-extrabold tw-text-white tw-leading-[1.1] tw-mb-4">
+              Outfit every school<br />with confidence.
             </h1>
-            <p class="tw-text-[15px] tw-text-white/45 tw-leading-[1.7]">
+            <p class="tw-text-[15px] tw-text-white/55 tw-leading-[1.7] tw-max-w-md">
               A unified platform for all your admin needs — clients, inventory, orders, and more.
             </p>
           </div>
 
-          <p class="tw-text-xs tw-text-white/20">© 2026 Miza. All rights reserved.</p>
+          <p class="tw-text-xs tw-text-white/25 tw-relative">© 2026 Miza. All rights reserved.</p>
         </div>
 
         <!-- Right Panel — Form -->
-        <div class="tw-flex-1 tw-flex tw-items-center tw-justify-center tw-py-8 tw-px-6 tw-bg-[#f5f5f7]">
+        <div class="tw-flex-1 tw-flex tw-items-center tw-justify-center tw-py-8 tw-px-6 tw-bg-miza-paper">
           <router-view />
         </div>
 
@@ -35,3 +35,7 @@
     </q-page-container>
   </q-layout>
 </template>
+
+<script setup>
+import MizaLogo from 'components/brand/MizaLogo.vue'
+</script>

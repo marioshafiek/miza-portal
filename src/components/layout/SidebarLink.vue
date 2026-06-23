@@ -57,14 +57,14 @@ defineProps({
   }
 
   &.mz-nav-link--active {
-    background: rgba(99, 102, 241, .15) !important;
-    color: #a5b4fc !important;
+    background: rgba(214, 38, 44, .18) !important;
+    color: #ffffff !important;
     font-weight: 600 !important;
 
-    .mz-nav-icon { color: #818cf8 !important; }
+    .mz-nav-icon { color: #f5c518 !important; }
 
     &:hover {
-      background: rgba(99, 102, 241, .2) !important;
+      background: rgba(214, 38, 44, .26) !important;
     }
   }
 }

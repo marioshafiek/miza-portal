@@ -1,16 +1,16 @@
 // Quasar SCSS (& Sass) Variables
 // --------------------------------------------------
-// To customize the look and feel of this app, you can override
-// the Sass/SCSS variables found in Quasar's source Sass files
+// Miza brand palette — see brand-indentity/MIZA-BRAND.md
+// Red leads, gold accents, ink for text, paper for surfaces.
 
-$primary: #1976d2;
-$secondary: #26a69a;
-$accent: #9c27b0;
+$primary:   #d6262c; // Miza Red
+$secondary: #f5c518; // Miza Gold
+$accent:    #f5c518; // Miza Gold
 
-$dark: #1d1d1d;
-$dark-page: #121212;
+$dark:      #1f1d1a; // Ink
+$dark-page: #161412;
 
-$positive: #21ba45;
-$negative: #c10015;
-$info: #31ccec;
-$warning: #f2c037;
+$positive:  #21ba45;
+$negative:  #c10015;
+$info:      #31ccec;
+$warning:   #f5c518;

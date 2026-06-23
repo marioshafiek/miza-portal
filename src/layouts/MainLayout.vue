@@ -8,20 +8,16 @@
       :width="240"
       :breakpoint="768"
       bordered
-      class="tw-bg-[#0f0f11] tw-border-r tw-border-white/[0.06]"
+      class="tw-bg-miza-ink tw-border-r tw-border-white/[0.06]"
     >
       <div class="tw-flex tw-flex-col tw-h-full">
 
         <!-- Brand -->
         <div class="tw-flex tw-items-center tw-gap-2.5 tw-px-4 tw-pt-5 tw-pb-[18px] tw-border-b tw-border-white/[0.06]">
-          <div class="tw-w-[34px] tw-h-[34px] tw-rounded-[9px] tw-bg-gradient-to-br tw-from-indigo-500 tw-to-violet-500 tw-flex tw-items-center tw-justify-center tw-shrink-0">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M9 1L16.5 5.25V12.75L9 17L1.5 12.75V5.25L9 1Z" fill="white" fill-opacity=".9"/>
-            </svg>
-          </div>
+          <MizaLogo variant="icon" :size="34" />
           <div>
-            <div class="tw-text-[15px] tw-font-bold tw-text-white tw-leading-[1.1] tw-tracking-tight">Miza</div>
-            <div class="tw-text-[10px] tw-font-medium tw-text-white/35 tw-uppercase tw-tracking-[1px]">Portal</div>
+            <MizaLogo tone="dark" :size="20" class="tw-block" />
+            <div class="tw-text-[10px] tw-font-medium tw-text-white/35 tw-uppercase tw-tracking-[1.5px] tw-mt-0.5">Portal</div>
           </div>
         </div>
 
@@ -52,7 +48,7 @@
 
         <!-- User footer -->
         <div class="tw-flex tw-items-center tw-gap-2.5 tw-px-3 tw-pt-3.5 tw-pb-[18px] tw-border-t tw-border-white/[0.06]">
-          <div class="tw-w-8 tw-h-8 tw-rounded-lg tw-bg-gradient-to-br tw-from-indigo-500 tw-to-violet-500 tw-text-white tw-text-[13px] tw-font-bold tw-flex tw-items-center tw-justify-center tw-shrink-0">
+          <div class="tw-w-8 tw-h-8 tw-rounded-lg tw-bg-gradient-to-br tw-from-miza-red tw-to-miza-red-dark tw-text-white tw-text-[13px] tw-font-bold tw-flex tw-items-center tw-justify-center tw-shrink-0">
             {{ (authStore.user?.email?.[0] ?? 'M').toUpperCase() }}
           </div>
           <div class="tw-flex-1 tw-min-w-0">
@@ -75,7 +71,7 @@
     </q-drawer>
 
     <!-- ── Top Bar ───────────────────────────────────────────── -->
-    <q-header class="tw-border-b tw-border-gray-200 tw-text-[#111]" style="background:#fafafa !important; box-shadow:none !important;">
+    <q-header class="tw-border-b tw-border-miza-border tw-text-miza-ink" style="background:var(--miza-paper) !important; box-shadow:none !important;">
       <div class="tw-flex tw-items-center tw-gap-1.5 tw-px-5 tw-h-[54px]">
 
         <!-- Mobile menu toggle -->
@@ -103,7 +99,7 @@
             v-badge.danger="'3'"
           />
           <div @click="userSettingClicked($event)"
-              class="tw-w-8 tw-h-8 tw-rounded-lg tw-bg-gradient-to-br tw-from-indigo-500 tw-to-violet-500 tw-text-white tw-text-[13px] tw-font-bold tw-flex tw-items-center tw-justify-center tw-cursor-pointer tw-shrink-0"
+              class="tw-w-8 tw-h-8 tw-rounded-lg tw-bg-gradient-to-br tw-from-miza-red tw-to-miza-red-dark tw-text-white tw-text-[13px] tw-font-bold tw-flex tw-items-center tw-justify-center tw-cursor-pointer tw-shrink-0"
               aria-haspopup="true" aria-controls="overlay_menu"
           >
             {{ (authStore.user?.email?.[0] ?? 'M').toUpperCase() }}
@@ -121,7 +117,7 @@
     </q-header>
 
     <!-- ── Page Content ───────────────────────────────────────── -->
-    <q-page-container class="tw-bg-[#f5f5f7]">
+    <q-page-container class="tw-bg-miza-paper">
       <router-view />
     </q-page-container>
 
@@ -134,6 +130,7 @@ import { useRouter } from 'vue-router'
 import Button from 'primevue/button'
 import Menu from 'primevue/menu'
 import SidebarLink from 'components/layout/SidebarLink.vue'
+import MizaLogo from 'components/brand/MizaLogo.vue'
 import { useAuthStore } from 'stores/auth'
 
 const router = useRouter()

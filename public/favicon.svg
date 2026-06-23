@@ -1,0 +1,4 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Miza">
+  <rect x="0" y="0" width="200" height="200" rx="44" fill="#D6262C"/>
+  <path fill="#F5C518" d="M58 64 Q58 48 78 48 L138 48 Q160 48 160 68 Q160 82 148 92 L96 134 L140 134 Q160 134 160 154 Q160 152 140 152 L62 152 Q40 152 40 132 Q40 118 52 108 L104 66 L78 66 Q58 66 58 64 Z"/>
+</svg>

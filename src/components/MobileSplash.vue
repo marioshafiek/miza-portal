@@ -2,17 +2,12 @@
   <div class="mobile-splash">
     <div class="mobile-splash__card">
       <div class="mobile-splash__icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-          <rect x="8" y="4" width="32" height="56" rx="4" stroke="#6366f1" stroke-width="3" fill="none"/>
-          <line x1="20" y1="52" x2="28" y2="52" stroke="#6366f1" stroke-width="3" stroke-linecap="round"/>
-          <rect x="28" y="20" width="28" height="20" rx="3" fill="#6366f1" opacity="0.15" stroke="#6366f1" stroke-width="2.5"/>
-          <line x1="33" y1="25" x2="51" y2="25" stroke="#6366f1" stroke-width="2" stroke-linecap="round"/>
-          <line x1="33" y1="30" x2="47" y2="30" stroke="#6366f1" stroke-width="2" stroke-linecap="round"/>
-          <line x1="33" y1="35" x2="44" y2="35" stroke="#6366f1" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+        <MizaLogo variant="icon" :size="64" />
       </div>
 
-      <div class="mobile-splash__logo">Miza</div>
+      <div class="mobile-splash__logo">
+        <MizaLogo tone="dark" :size="22" />
+      </div>
 
       <h1 class="mobile-splash__title">Desktop Only</h1>
 
@@ -32,7 +27,7 @@
 </template>
 
 <script setup>
-// No logic needed — purely presentational
+import MizaLogo from 'components/brand/MizaLogo.vue'
 </script>
 
 <style scoped>
@@ -40,7 +35,7 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #0f0f1a;
+  background: #161412;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,59 +43,55 @@
 }
 
 .mobile-splash__card {
-  background: #1a1a2e;
-  border: 1px solid rgba(99, 102, 241, 0.25);
-  border-radius: 20px;
+  background: #1f1d1a;
+  border: 1px solid rgba(245, 197, 24, 0.18);
+  border-radius: 24px;
   padding: 40px 32px;
   max-width: 360px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 0 60px rgba(99, 102, 241, 0.12);
+  box-shadow: 0 0 60px rgba(214, 38, 44, 0.18);
 }
 
 .mobile-splash__icon {
-  margin-bottom: 16px;
-}
-
-.mobile-splash__icon svg {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
 }
 
 .mobile-splash__logo {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #6366f1;
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 22px;
 }
 
 .mobile-splash__title {
-  font-size: 24px;
-  font-weight: 700;
-  color: #f1f5f9;
+  font-family: 'Baloo 2', ui-sans-serif, system-ui, sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #fbfaf8;
   margin: 0 0 14px;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .mobile-splash__message {
+  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
   font-size: 15px;
-  color: #94a3b8;
+  color: rgba(251, 250, 248, 0.6);
   line-height: 1.65;
   margin: 0 0 24px;
 }
 
 .mobile-splash__divider {
   height: 1px;
-  background: rgba(99, 102, 241, 0.15);
+  background: rgba(245, 197, 24, 0.15);
   margin: 0 0 20px;
 }
 
 .mobile-splash__hint {
+  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
   font-size: 13px;
-  color: #64748b;
+  color: rgba(251, 250, 248, 0.45);
   margin: 0;
   display: flex;
   align-items: center;

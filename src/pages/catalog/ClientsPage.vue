@@ -1,12 +1,12 @@
 <template>
-  <q-page class="tw-bg-[#f5f5f7]">
+  <q-page class="tw-bg-miza-paper">
     <div class="tw-max-w-[1200px] tw-mx-auto tw-px-7 tw-py-8 tw-flex tw-flex-col tw-gap-5">
 
       <!-- ── Page Header ──────────────────────────────────── -->
       <div class="tw-flex tw-items-end tw-justify-between">
         <div>
-          <div class="tw-text-[10.5px] tw-font-bold tw-uppercase tw-tracking-[1.5px] tw-text-indigo-500 tw-mb-1">Catalog</div>
-          <h1 class="tw-text-2xl tw-font-extrabold tw-text-[#0f0f11] tw-tracking-tight tw-leading-[1.1]">Clients</h1>
+          <div class="tw-text-[10.5px] tw-font-bold tw-uppercase tw-tracking-[1.5px] tw-text-miza-red tw-mb-1">Catalog</div>
+          <h1 class="tw-text-2xl tw-font-extrabold tw-text-miza-ink tw-tracking-tight tw-leading-[1.1]">Clients</h1>
           <p class="tw-text-[13.5px] tw-text-gray-400 tw-mt-1.5">Manage schools, companies, and organizations — and their stages.</p>
         </div>
       </div>
@@ -41,7 +41,7 @@
           <Column field="name" header="Name" sortable style="min-width:180px">
             <template #body="{ data }">
               <div class="tw-flex tw-items-center tw-gap-2.5">
-                <div class="tw-w-8 tw-h-8 tw-rounded-[9px] tw-bg-gradient-to-br tw-from-indigo-100 tw-to-indigo-200 tw-text-indigo-500 tw-text-[13px] tw-font-extrabold tw-flex tw-items-center tw-justify-center tw-shrink-0">
+                <div class="tw-w-8 tw-h-8 tw-rounded-[9px] tw-bg-gradient-to-br tw-from-miza-red-tint tw-to-miza-red-tint tw-text-miza-red tw-text-[13px] tw-font-extrabold tw-flex tw-items-center tw-justify-center tw-shrink-0">
                   {{ data.name?.[0]?.toUpperCase() ?? '?' }}
                 </div>
                 <span class="tw-text-[13.5px] tw-font-semibold tw-text-[#111]">{{ data.name }}</span>
@@ -106,7 +106,7 @@
           <Column header="Client" sortable style="min-width:160px">
             <template #body="{ data }">
               <div class="tw-flex tw-items-center tw-gap-2.5">
-                <div class="tw-w-[26px] tw-h-[26px] tw-rounded-[7px] tw-bg-gradient-to-br tw-from-indigo-100 tw-to-indigo-200 tw-text-indigo-500 tw-text-[11px] tw-font-extrabold tw-flex tw-items-center tw-justify-center tw-shrink-0">
+                <div class="tw-w-[26px] tw-h-[26px] tw-rounded-[7px] tw-bg-gradient-to-br tw-from-miza-red-tint tw-to-miza-red-tint tw-text-miza-red tw-text-[11px] tw-font-extrabold tw-flex tw-items-center tw-justify-center tw-shrink-0">
                   {{ clientName(data.client_id)?.[0]?.toUpperCase() ?? '?' }}
                 </div>
                 <span class="tw-text-[13.5px] tw-font-semibold tw-text-[#111]">{{ clientName(data.client_id) || '—' }}</span>
@@ -271,8 +271,8 @@ function stagesCountFor(id) { return stages.value.filter(s => s.client_id === id
 function clientName(id) { return clients.value.find(c => c.id === id)?.name ?? '' }
 
 const typeMap = {
-  school:  { label: 'School',  cls: 'tw-bg-[#eef2ff] tw-text-indigo-500' },
-  company: { label: 'Company', cls: 'tw-bg-[#f5f3ff] tw-text-violet-700' },
+  school:  { label: 'School',  cls: 'tw-bg-[#fbe9e9] tw-text-miza-red' },
+  company: { label: 'Company', cls: 'tw-bg-[#fbe9e9] tw-text-miza-red' },
   club:    { label: 'Club',    cls: 'tw-bg-[#fffbeb] tw-text-amber-600' },
   other:   { label: 'Other',   cls: 'tw-bg-gray-50 tw-text-gray-500' },
 }
@@ -413,7 +413,7 @@ async function confirmDelete() {
       color: #fff !important;
 
       .p-togglebutton-content {
-        background: #0f0f11 !important;
+        background: #1f1d1a !important;
         color: #fff !important;
       }
 
@@ -436,7 +436,7 @@ async function confirmDelete() {
   font-size: 13px !important;
   box-shadow: none !important;
   &:hover { border-color: #d1d5db !important; }
-  &.p-focus { border-color: #6366f1 !important; box-shadow: none !important; }
+  &.p-focus { border-color: #d6262c !important; box-shadow: none !important; }
   .p-select-label { font-size: 13px !important; padding: 7px 10px !important; color: #374151 !important; }
 }
 </style>

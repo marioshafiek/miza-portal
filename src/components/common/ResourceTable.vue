@@ -148,25 +148,25 @@ const filteredRows = computed(() => {
   color: #111 !important;
   box-shadow: none !important;
   &::placeholder { color: #c4c9d4 !important; }
-  &:focus { border-color: #6366f1 !important; background: #fff !important; }
+  &:focus { border-color: #d6262c !important; background: #fff !important; }
 }
 
 // ── Add button — filled, NO border ─────────────────────────────────────────
 .mz-btn-add.p-button {
-  background: #6366f1 !important;
+  background: #d6262c !important;
   border: none !important;
   border-radius: 8px !important;
   font-size: 13px !important;
   font-weight: 600 !important;
   padding: 7px 14px !important;
   box-shadow: none !important;
-  &:hover { background: #4f52e0 !important; }
+  &:hover { background: #b71e23 !important; }
   &:focus { box-shadow: none !important; }
 }
 
 // ── DataTable ───────────────────────────────────────────────────────────────
 .mz-datatable {
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-body) !important;
 
   .p-datatable-thead > tr > th {
     background: #f9fafb !important;
@@ -203,7 +203,7 @@ const filteredRows = computed(() => {
     padding: 10px 16px !important;
     font-size: 12px;
     .p-paginator-page.p-highlight {
-      background: #6366f1 !important;
+      background: #d6262c !important;
       color: #fff !important;
       border: none !important;
       border-radius: 6px !important;
@@ -221,7 +221,7 @@ const filteredRows = computed(() => {
   width: 28px !important; height: 28px !important;
   border: none !important; box-shadow: none !important;
   color: #9ca3af !important;
-  &:hover { background: #eef2ff !important; color: #6366f1 !important; }
+  &:hover { background: #fbe9e9 !important; color: #d6262c !important; }
   .p-button-icon { font-size: 12px !important; }
 }
 .mz-action-delete.p-button {
@@ -235,7 +235,7 @@ const filteredRows = computed(() => {
 // ── Empty btn ────────────────────────────────────────────────────────────────
 .mz-empty-btn.p-button {
   margin-top: 8px;
-  color: #6366f1 !important;
+  color: #d6262c !important;
   border: none !important;
   box-shadow: none !important;
   font-size: 13px !important;
